@@ -174,16 +174,10 @@ function App() {
 
       daysToCheck.forEach(dayOffset => {
         settings.checkTimes.forEach(time => {
-          let h = time.hour;
-          let m = time.minute;
+          const h = time.hour;
+          const m = time.minute;
 
-          // Evening shift special target
-          if (h === 18 && m === 0) {
-            h = 17;
-            m = 45;
-          }
-
-          let runTime = nowInTz
+          const runTime = nowInTz
             .add(dayOffset, 'day')
             .hour(h)
             .minute(m)
@@ -209,19 +203,15 @@ function App() {
         );
       }
 
-      // Check if any checkTime is currently in its 15-minute active window
+      // Check if any checkTime is currently in its active execution minute
       let activeShift = false;
       settings.checkTimes.forEach(time => {
-        let h = time.hour;
-        let m = time.minute;
-        if (h === 18 && m === 0) {
-          h = 17;
-          m = 45;
-        }
+        const h = time.hour;
+        const m = time.minute;
 
         const todayRun = nowInTz.hour(h).minute(m).second(0).millisecond(0);
         const diffMinutes = nowInTz.diff(todayRun, 'minute');
-        if (diffMinutes >= 0 && diffMinutes < 15) {
+        if (diffMinutes === 0) {
           activeShift = true;
         }
       });
@@ -249,12 +239,8 @@ function App() {
     const currM = nowInTz.minute();
 
     let nextIndex = sorted.findIndex(t => {
-      let h = t.hour;
-      let m = t.minute;
-      if (h === 18 && m === 0) {
-        h = 17;
-        m = 45;
-      }
+      const h = t.hour;
+      const m = t.minute;
       if (h > currH) return true;
       if (h === currH && m > currM) return true;
       return false;
@@ -264,17 +250,7 @@ function App() {
 
     const items = sorted.map((time, idx) => {
       const isNext = idx === nextIndex;
-      let displayTime = '';
-      if (time.hour === 18 && time.minute === 0) {
-        displayTime = '17:45 - 18:00';
-      } else {
-        const startHour = String(time.hour).padStart(2, '0');
-        const startMin = String(time.minute).padStart(2, '0');
-        const endMinVal = time.minute + 15;
-        const endHour = endMinVal >= 60 ? time.hour + 1 : time.hour;
-        const endMin = String(endMinVal % 60).padStart(2, '0');
-        displayTime = `${startHour}:${startMin} - ${String(endHour).padStart(2, '0')}:${endMin}`;
-      }
+      const displayTime = 'Chạy chính xác';
 
       return {
         key: idx,
@@ -745,7 +721,7 @@ function App() {
                     </div>
                     {isShiftActive && (
                       <div style={{ marginTop: 12, padding: '10px 14px', background: 'rgba(245, 158, 11, 0.1)', border: '1px solid rgba(245, 158, 11, 0.2)', borderRadius: 8, color: '#f59e0b', fontSize: '0.8rem', lineHeight: '1.45', textAlign: 'center', width: '90%' }}>
-                        Hệ thống đang thực hiện chấm công tự động trong khung giờ này (trễ ngẫu nhiên từ 0-15 phút để mô phỏng hành vi người dùng). Tin nhắn báo cáo Telegram sẽ gửi ngay sau khi hoàn thành.
+                        Hệ thống đang thực hiện chấm công tự động ngay bây giờ. Báo cáo chi tiết sẽ được gửi qua Telegram ngay sau khi hoàn tất.
                       </div>
                     )}
                   </div>

@@ -478,33 +478,13 @@ export async function startScheduler() {
   db.addLog('info', `⏰ Khởi động Scheduler với Timezone: ${timezone}. Số lịch trình: ${checkTimes.length}`);
   
   checkTimes.forEach(time => {
-    let cronHour = time.hour;
-    let cronMinute = time.minute;
-    let targetRangeText = '';
-    
-    // Điều chỉnh đặc biệt cho ca chiều (18:00):
-    // Lên lịch trigger lúc 17:45 và chạy với độ trễ ngẫu nhiên 0-15 phút để đảm bảo thực thi trong khoảng 17:45 - 18:00.
-    if (time.hour === 18 && time.minute === 0) {
-      cronHour = 17;
-      cronMinute = 45;
-      targetRangeText = '17h45 - 18h00';
-    } else {
-      // Các ca khác (ví dụ: 8h, 12h) sẽ chạy trễ ngẫu nhiên từ thời gian cài đặt đến +15 phút sau đó
-      const endHour = time.hour;
-      const endMinute = time.minute + 15;
-      const displayEndHour = endMinute >= 60 ? endHour + 1 : endHour;
-      const displayEndMinute = endMinute % 60;
-      targetRangeText = `${time.hour}h${time.minute.toString().padStart(2, '0')} - ${displayEndHour}h${displayEndMinute.toString().padStart(2, '0')}`;
-    }
-    
+    const cronHour = time.hour;
+    const cronMinute = time.minute;
+    const scheduledTimeStr = `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}`;
     const cronExpression = `${cronMinute} ${cronHour} * * *`;
     
     const task = cron.schedule(cronExpression, async () => {
-      // ĐÃ TẠM THỜI TẮT ĐỘ TRỄ NGẪU NHIÊN THEO YÊU CẦU CỦA USER (DELAY = 0)
-      const delayMs = 0;
-      
-      const scheduledTimeStr = `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}`;
-      const logMsg = `⏰ Lịch chạy tự động ca ${scheduledTimeStr} được kích hoạt và chạy ngay lập tức (đã tạm tắt delay ngẫu nhiên)...`;
+      const logMsg = `⏰ Lịch chạy tự động ca ${scheduledTimeStr} được kích hoạt và chạy ngay lập tức...`;
       
       console.log(`[Scheduler] Cron triggered for ca ${scheduledTimeStr}. Running immediately.`);
       db.addLog('info', logMsg);
@@ -520,6 +500,6 @@ export async function startScheduler() {
     });
     
     cronTasks.push(task);
-    console.log(`[Scheduler] Scheduled task for ca ${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')} (Cron: ${cronHour}:${cronMinute}, Target range: ${targetRangeText}, timezone: ${timezone})`);
+    console.log(`[Scheduler] Scheduled task for ca ${scheduledTimeStr} (Cron: ${cronExpression}, timezone: ${timezone})`);
   });
 }
