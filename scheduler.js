@@ -162,9 +162,17 @@ async function loginEmployee(empCode, password) {
   return data;
 }
 
-// API: Get attendance history
+// API: Get attendance history (fetching yesterday and today to handle shifts crossing midnight and late-night check-ins)
 async function getAttendanceHistory(employeeId, token, timezone) {
-  const { startDate, endDate } = getTodayTimestampRange(timezone);
+  const dateStr = getFormattedDateInTimezone(new Date(), 'yyyy-MM-dd', timezone);
+  const todayStart = new Date(`${dateStr}T00:00:00+07:00`);
+  // Subtract 24 hours to get yesterday's start
+  const yesterdayStart = new Date(todayStart.getTime() - 24 * 60 * 60 * 1000);
+  const end = new Date(`${dateStr}T23:59:59.999+07:00`);
+  
+  const startDate = Math.floor(yesterdayStart.getTime() / 1000);
+  const endDate = Math.floor(end.getTime() / 1000);
+  
   const url = `${ATTENDANCE_HISTORY_API}?EmployeeId=${employeeId}&StartDate=${startDate}&EndDate=${endDate}`;
   
   const response = await fetch(url, {
@@ -183,22 +191,44 @@ async function getAttendanceHistory(employeeId, token, timezone) {
 }
 
 function buildAttendanceSummary(history, timezone) {
-  const item = history.data && history.data[0];
-  const records = item && item.attendanceRecord ? item.attendanceRecord : [];
+  const data = history.data || [];
   
+  // 1. Gather all attendance records across all days in the fetched range
+  let allRecords = [];
+  data.forEach(dayItem => {
+    const records = dayItem.attendanceRecord || [];
+    allRecords.push(...records);
+  });
+  
+  // Sort all records chronologically by checkInTime ascending
+  allRecords.sort((a, b) => a.checkInTime - b.checkInTime);
+  
+  // 2. Find the latest record to determine the active check-in state
+  const latestRecord = allRecords.length > 0 ? allRecords[allRecords.length - 1] : null;
+  const hasActiveCheckIn = latestRecord ? (latestRecord.checkInTime && !latestRecord.checkOutTime) : false;
+  
+  // 3. Count check-ins and check-outs for TODAY (calendar date) for logging/reporting
+  const todayStr = getFormattedDateInTimezone(new Date(), 'yyyy-MM-dd', timezone);
   let checkInTimes = [];
   let checkOutTimes = [];
   
-  records.forEach(record => {
+  allRecords.forEach(record => {
     if (record.checkInTime) {
-      checkInTimes.push(formatTimestamp(record.checkInTime, timezone));
+      const recordDate = getFormattedDateInTimezone(new Date(record.checkInTime * 1000), 'yyyy-MM-dd', timezone);
+      if (recordDate === todayStr) {
+        checkInTimes.push(formatTimestamp(record.checkInTime, timezone));
+      }
     }
     if (record.checkOutTime) {
-      checkOutTimes.push(formatTimestamp(record.checkOutTime, timezone));
+      const recordDate = getFormattedDateInTimezone(new Date(record.checkOutTime * 1000), 'yyyy-MM-dd', timezone);
+      if (recordDate === todayStr) {
+        checkOutTimes.push(formatTimestamp(record.checkOutTime, timezone));
+      }
     }
   });
   
   return {
+    hasActiveCheckIn,
     checkInCount: checkInTimes.length,
     checkOutCount: checkOutTimes.length,
     checkInTimes,
@@ -317,20 +347,31 @@ export async function runCheckForUser(user, timezone) {
     const history = await getAttendanceHistory(employeeId, token, timezone);
     const summary = buildAttendanceSummary(history, timezone);
     
-    const nextType = summary.checkInCount > summary.checkOutCount ? false : true;
+    const nextType = summary.hasActiveCheckIn ? false : true;
     const actionText = nextType ? 'CHECK IN' : 'CHECK OUT';
     
     const checkResponse = await doCheckInOut(employeeId, token, nextType);
     
     if (!isApiSuccess(checkResponse)) {
-      const failMsg = `❌ [${empCode}] ${fullName} - Chế độ: ${ruleCheck.modeText} - ${actionText} thất bại`;
+      console.error('[Scheduler Error Details] checkResponse:', JSON.stringify(checkResponse, null, 2));
+      let errorDetail = '';
+      if (checkResponse && typeof checkResponse === 'object') {
+        const msg = checkResponse.message;
+        const err = checkResponse.error;
+        const detailMsg = typeof msg === 'object' ? JSON.stringify(msg) : msg;
+        const detailErr = typeof err === 'object' ? JSON.stringify(err) : err;
+        errorDetail = detailMsg || detailErr || JSON.stringify(checkResponse);
+      } else {
+        errorDetail = String(checkResponse);
+      }
+      const failMsg = `❌ [${empCode}] ${fullName} - Chế độ: ${ruleCheck.modeText} - ${actionText} thất bại: ${errorDetail}`;
       db.addLog('error', failMsg);
       return {
         empCode,
         fullName,
         status: 'error',
         modeText: ruleCheck.modeText,
-        message: `${actionText} thất bại`
+        message: `${actionText} thất bại: ${errorDetail}`
       };
     }
     
