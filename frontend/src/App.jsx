@@ -48,6 +48,8 @@ dayjs.extend(timezone);
 const { Header, Content, Sider } = Layout;
 const { Option } = Select;
 
+const API_BASE = import.meta.env.PROD ? 'https://teleauto-0tdl.onrender.com' : '';
+
 export default function AppWrapper() {
   return (
     <ConfigProvider
@@ -124,9 +126,9 @@ function App() {
     setLoading(true);
     try {
       const [settingsRes, usersRes, leavesRes] = await Promise.all([
-        fetch('/api/settings').then(r => r.json()),
-        fetch('/api/users').then(r => r.json()),
-        fetch('/api/leaves').then(r => r.json())
+        fetch(`${API_BASE}/api/settings`).then(r => r.json()),
+        fetch(`${API_BASE}/api/users`).then(r => r.json()),
+        fetch(`${API_BASE}/api/leaves`).then(r => r.json())
       ]);
 
       setSettings(settingsRes);
@@ -281,7 +283,7 @@ function App() {
         ...updatedFields
       };
 
-      const res = await fetch('/api/settings', {
+      const res = await fetch(`${API_BASE}/api/settings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -310,7 +312,7 @@ function App() {
     setConsoleOutput([{ type: 'info', text: '🚀 Bắt đầu trigger chấm công thủ công cho tất cả tài khoản...' }]);
 
     try {
-      const res = await fetch('/api/trigger', { method: 'POST' });
+      const res = await fetch(`${API_BASE}/api/trigger`, { method: 'POST' });
       const data = await res.json();
 
       if (data.success && Array.isArray(data.results)) {
@@ -337,7 +339,7 @@ function App() {
   const runUserManualTrigger = async (empCode, fullName) => {
     message.loading(`Đang chạy kiểm tra cho nhân viên ${empCode}...`, 1.5);
     try {
-      const res = await fetch(`/api/trigger/${empCode}`, { method: 'POST' });
+      const res = await fetch(`${API_BASE}/api/trigger/${empCode}`, { method: 'POST' });
       const data = await res.json();
       if (data.success && data.result) {
         const r = data.result;
@@ -389,7 +391,7 @@ function App() {
       setTestLoginLoading(true);
       setTestLoginResult(null);
 
-      const res = await fetch('/api/users/test-login', {
+      const res = await fetch(`${API_BASE}/api/users/test-login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(vals)
@@ -410,7 +412,7 @@ function App() {
   };
 
   const handleUserSubmit = async (values) => {
-    const url = editingUser ? `/api/users/${editingUser.empCode}` : '/api/users';
+    const url = editingUser ? `${API_BASE}/api/users/${editingUser.empCode}` : `${API_BASE}/api/users`;
     const method = editingUser ? 'PUT' : 'POST';
 
     try {
@@ -440,7 +442,7 @@ function App() {
 
   const handleDeleteUser = async (empCode) => {
     try {
-      const res = await fetch(`/api/users/${empCode}`, { method: 'DELETE' });
+      const res = await fetch(`${API_BASE}/api/users/${empCode}`, { method: 'DELETE' });
       if (res.ok) {
         message.success('Đã xóa nhân viên.');
         fetchData();
@@ -454,7 +456,7 @@ function App() {
 
   const handleToggleUserActive = async (empCode, checked) => {
     try {
-      const res = await fetch(`/api/users/${empCode}`, {
+      const res = await fetch(`${API_BASE}/api/users/${empCode}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ isActive: checked })
@@ -471,7 +473,7 @@ function App() {
   // --- Leaves Actions ---
   const handleAddLeave = async (values) => {
     try {
-      const res = await fetch('/api/leaves', {
+      const res = await fetch(`${API_BASE}/api/leaves`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -496,7 +498,7 @@ function App() {
 
   const handleDeleteLeave = async (empCode, date) => {
     try {
-      const res = await fetch(`/api/leaves/${empCode}/${date}`, { method: 'DELETE' });
+      const res = await fetch(`${API_BASE}/api/leaves/${empCode}/${date}`, { method: 'DELETE' });
       if (res.ok) {
         message.success('Đã xóa lịch nghỉ.');
         fetchData();
@@ -593,7 +595,7 @@ function App() {
   const sendTestTelegramMsg = async () => {
     message.loading('Đang gửi tin nhắn thử nghiệm...', 1.5);
     try {
-      const res = await fetch('/api/settings/test-telegram', { method: 'POST' });
+      const res = await fetch(`${API_BASE}/api/settings/test-telegram`, { method: 'POST' });
       const data = await res.json();
       if (data.success) {
         message.success('Đã gửi tin nhắn thử nghiệm! Hãy check Telegram của bạn.');
