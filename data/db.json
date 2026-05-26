@@ -1,0 +1,1346 @@
+{
+  "settings": {
+    "telegramToken": "8062669563:AAGFgodK1Lup5Jwn9vlN3x9JNkja-uJwlyo",
+    "telegramChatIds": [
+      "7864804029",
+      "8145357636"
+    ],
+    "timezone": "Asia/Ho_Chi_Minh",
+    "checkTimes": [
+      {
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "hour": 12,
+        "minute": 0
+      },
+      {
+        "hour": 18,
+        "minute": 0
+      }
+    ],
+    "leavesJsonUrl": ""
+  },
+  "users": [
+    {
+      "empCode": "erp.nimda",
+      "password": "erp@2025#",
+      "fullName": "Super admin",
+      "isActive": true
+    }
+  ],
+  "leaves": [],
+  "logs": [
+    {
+      "timestamp": "2026-05-26T18:25:31.283Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:25:31.281Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:21:04.688Z",
+      "type": "info",
+      "message": "Đã cập nhật cấu hình hệ thống và khởi động lại Scheduler."
+    },
+    {
+      "timestamp": "2026-05-26T18:21:04.679Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:20:46.107Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:20:46.104Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:20:12.372Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:20:12.370Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:20:07.157Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:20:07.154Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:18:36.137Z",
+      "type": "info",
+      "message": "Đã cập nhật cấu hình hệ thống và khởi động lại Scheduler."
+    },
+    {
+      "timestamp": "2026-05-26T18:18:36.130Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:18:12.348Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:18:12.346Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:18:01.056Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:18:01.054Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:17:26.140Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:17:26.138Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:17:19.740Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:17:19.738Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:15:30.959Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:15:30.957Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:14:27.289Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:14:27.287Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:14:21.595Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:14:21.593Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:14:12.532Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:14:12.528Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:09:57.511Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:09:57.509Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:09:46.366Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:09:46.364Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:05:46.039Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:05:46.036Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:03:49.485Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:03:49.483Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:03:42.626Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:03:42.622Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:03:25.634Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:03:25.632Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:03:04.531Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:03:04.529Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:02:55.460Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:02:55.458Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:02:43.823Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:02:43.821Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T18:02:34.873Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T18:02:34.869Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:57:47.866Z",
+      "type": "info",
+      "message": "🤖 Kết thúc trigger chấm công. Đã gửi thông báo Telegram."
+    },
+    {
+      "timestamp": "2026-05-26T17:57:46.130Z",
+      "type": "success",
+      "message": "✅ [erp.nimda] Super admin - Chế độ: FULL - Chấm công mặc định | Check-in trước đó: 0 lần (Chưa có) | Check-out trước đó: 0 lần (Chưa có) | 🎯 CHECK IN thành công lúc 00:57:46"
+    },
+    {
+      "timestamp": "2026-05-26T17:57:45.736Z",
+      "type": "info",
+      "message": "🤖 Bắt đầu trigger chấm công tự động (Thủ công) lúc 00:57:45"
+    },
+    {
+      "timestamp": "2026-05-26T17:56:20.938Z",
+      "type": "info",
+      "message": "Đã thêm tài khoản nhân viên: erp.nimda (Super admin)"
+    },
+    {
+      "timestamp": "2026-05-26T17:55:40.558Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:55:40.554Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:54:15.221Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:54:15.219Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:53.884Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:53.882Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:53.440Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:53.437Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:53.030Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:53.028Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:52.597Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:52.595Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:52.093Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:52.092Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:51.627Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:51.604Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:51.178Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:51.175Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:50.758Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:50.756Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:50.355Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:50.353Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:49.805Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:49.803Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:49.247Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:49.245Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:48.809Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:48.806Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:48.366Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:48.364Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:47.910Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:47.908Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:28.920Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:28.918Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:28.387Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:28.385Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:27.976Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:27.974Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:27.446Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:27.444Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:26.948Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:26.947Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:26.413Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:26.409Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:25.996Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:25.994Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:25.558Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:25.557Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:25.095Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:25.093Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:24.671Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:24.669Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:24.295Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:24.293Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:23.915Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:23.914Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:23.390Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:23.388Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:22.866Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:22.859Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:22.446Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:22.444Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:21.911Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:21.909Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:21.406Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:21.404Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:20.905Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:20.904Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:20.384Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:20.382Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:19.858Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:19.855Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:19.425Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:19.420Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:18.994Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:18.983Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:18.564Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:18.563Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:18.125Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:18.123Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:17.667Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:17.664Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:17.216Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:17.214Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:16.755Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:16.753Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:16.398Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:16.395Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:15.871Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:15.869Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:15.332Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:15.330Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:14.917Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:14.915Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:14.392Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:14.390Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:13.837Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:13.835Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:13.358Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:13.356Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:12.846Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:12.844Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:12.440Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:12.437Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:11.892Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:11.889Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:11.481Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:11.479Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:11.068Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:11.065Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:10.580Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:10.577Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:10.054Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:10.053Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:09.698Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:09.696Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:09.207Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:09.205Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:08.814Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:08.813Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:08.303Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:08.300Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:07.884Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:07.882Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:07.397Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:07.395Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:07.043Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:07.042Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:06.672Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:06.669Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:06.264Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:06.263Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:05.864Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:05.862Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:05.441Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:05.440Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:05.028Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:05.026Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:04.499Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:04.497Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:03.975Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:03.966Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:03.500Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:03.498Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:03.008Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:03.007Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:02.508Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:02.506Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:01.998Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:01.996Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:01.485Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:01.482Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:01.007Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:01.006Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:00.513Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:53:00.510Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:53:00.001Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:59.999Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:59.457Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:59.455Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:58.935Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:58.934Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:58.439Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:58.425Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:57.979Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:57.976Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:57.499Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:57.497Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:56.948Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:56.946Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:56.415Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:56.413Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:55.906Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:55.904Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:55.381Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:55.379Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:54.848Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:54.845Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:54.332Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:54.330Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:53.842Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:53.840Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:53.303Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:53.302Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:52.801Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:52.800Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:52.280Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:52.277Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:51.771Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:51.769Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:51.230Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:51.228Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:50.749Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:50.747Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:50.226Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:50.224Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:49.702Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:49.701Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:49.179Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:49.176Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:48.661Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:48.658Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:48.146Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:48.145Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:47.658Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:47.655Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:52:47.121Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:52:47.118Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    },
+    {
+      "timestamp": "2026-05-26T17:49:41.279Z",
+      "type": "info",
+      "message": "⏰ Khởi động Scheduler với Timezone: Asia/Ho_Chi_Minh. Số lịch trình: 3"
+    },
+    {
+      "timestamp": "2026-05-26T17:49:41.278Z",
+      "type": "info",
+      "message": "Hệ thống bot bắt đầu hoạt động trên cổng 3000."
+    }
+  ]
+}
