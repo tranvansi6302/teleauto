@@ -205,7 +205,7 @@ function App() {
         );
       }
 
-      // Check if any checkTime is currently in its active execution minute
+      // Check if any checkTime is currently in its active execution window (0 - 15 minutes)
       let activeShift = false;
       settings.checkTimes.forEach(time => {
         const h = time.hour;
@@ -213,7 +213,7 @@ function App() {
 
         const todayRun = nowInTz.hour(h).minute(m).second(0).millisecond(0);
         const diffMinutes = nowInTz.diff(todayRun, 'minute');
-        if (diffMinutes === 0) {
+        if (diffMinutes >= 0 && diffMinutes <= 15) {
           activeShift = true;
         }
       });
@@ -252,11 +252,19 @@ function App() {
 
     const items = sorted.map((time, idx) => {
       const isNext = idx === nextIndex;
-      const displayTime = 'Chạy chính xác';
+      let endHour = time.hour;
+      let endMin = time.minute + 15;
+      if (endMin >= 60) {
+        endMin -= 60;
+        endHour = (endHour + 1) % 24;
+      }
+      const startStr = `${String(time.hour).padStart(2, '0')}:${String(time.minute).padStart(2, '0')}`;
+      const endStr = `${String(endHour).padStart(2, '0')}:${String(endMin).padStart(2, '0')}`;
+      const displayTime = `${startStr} - ${endStr} (Ngẫu nhiên +15p)`;
 
       return {
         key: idx,
-        time: `${String(time.hour).padStart(2, '0')}:${String(time.minute).padStart(2, '0')}`,
+        time: startStr,
         range: displayTime,
         isNext
       };

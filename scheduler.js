@@ -65,11 +65,21 @@ function formatTimestamp(timestamp, timezone) {
 }
 
 async function getTodayRuleForEmployee(empCode, timezone) {
+  const tz = timezone || 'Asia/Ho_Chi_Minh';
+  const dayOfWeekStr = new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short' }).format(new Date());
+  if (dayOfWeekStr === 'Sun') {
+    return {
+      allow: false,
+      modeText: 'OFF - Chủ nhật',
+      reason: 'Chủ nhật không chấm công'
+    };
+  }
+
   const leaves = await db.getLeaves();
-  const today = getFormattedDateInTimezone(new Date(), 'yyyy-MM-dd', timezone);
-  const hour = parseInt(getFormattedDateInTimezone(new Date(), 'H', timezone), 10);
+  const today = getFormattedDateInTimezone(new Date(), 'yyyy-MM-dd', tz);
+  const hour = parseInt(getFormattedDateInTimezone(new Date(), 'H', tz), 10);
   
-  const leave = leaves.find(l => l.empCode.trim() === String(empCode).trim() && formatSheetDate(l.date, timezone) === today);
+  const leave = leaves.find(l => l.empCode.trim() === String(empCode).trim() && formatSheetDate(l.date, tz) === today);
   const leaveType = leave ? leave.type : null; // 'Cả ngày', 'Buổi sáng', 'Buổi chiều' hoặc null (Không xin nghỉ = Làm cả ngày)
   
   if (leaveType === 'Cả ngày') {
@@ -420,13 +430,30 @@ export async function runAutoCheckInOutAndSendTelegram(isManual = false) {
   
   db.addLog('info', `🤖 Bắt đầu trigger chấm công tự động (${isManual ? 'Thủ công' : 'Theo lịch'}) lúc ${nowStr}`);
   
-  let resultList = [];
   let detailedResults = [];
   
-  for (const user of users) {
-    const res = await runCheckForUser(user, timezone);
-    detailedResults.push(res);
-    
+  if (!isManual) {
+    // Schedule check-ins with random delays (0 - 15 minutes) in parallel
+    const promises = users.map(async (user) => {
+      const ruleCheck = await getTodayRuleForEmployee(user.empCode, timezone);
+      if (ruleCheck.allow) {
+        const delayMs = Math.random() * 15 * 60 * 1000;
+        console.log(`[Scheduler] Delaying check-in for ${user.empCode} (${user.fullName || ''}) by ${(delayMs / 60000).toFixed(1)} mins`);
+        await new Promise(resolve => setTimeout(resolve, delayMs));
+      }
+      return await runCheckForUser(user, timezone);
+    });
+    detailedResults = await Promise.all(promises);
+  } else {
+    // Run immediately for manual trigger
+    for (const user of users) {
+      const res = await runCheckForUser(user, timezone);
+      detailedResults.push(res);
+    }
+  }
+  
+  let resultList = [];
+  for (const res of detailedResults) {
     if (res.status === 'bypass') {
       resultList.push(
         `⏭️ Đăng nhập thành công\n` +
