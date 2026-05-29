@@ -414,6 +414,33 @@ export async function runCheckForUser(user, timezone) {
   }
 }
 
+function formatSingleUserReport(res) {
+  if (res.status === 'bypass') {
+    return `⏭️ Đăng nhập thành công\n` +
+           `Tên: ${res.fullName}\n` +
+           `Mã: ${res.empCode}\n` +
+           `Chế độ hôm nay: ${res.modeText}\n` +
+           `Kết quả: Bỏ qua chấm công\n` +
+           `Lý do: ${res.message}`;
+  } else if (res.status === 'error') {
+    return `❌ Đăng nhập ${res.message.includes('Đăng nhập') ? 'thất bại' : 'thành công'}\n` +
+           `Tên: ${res.fullName}\n` +
+           `Mã: ${res.empCode}\n` +
+           `Chế độ hôm nay: ${res.modeText}\n` +
+           `Kết quả: Lỗi - ${res.message}`;
+  } else {
+    const actionText = res.message.includes('CHECK IN') ? 'CHECK IN' : 'CHECK OUT';
+    const timePart = res.message.split('thành công lúc ')[1] || '';
+    return `✅ Đăng nhập thành công\n` +
+           `Tên: ${res.fullName}\n` +
+           `Mã: ${res.empCode}\n` +
+           `Chế độ hôm nay: ${res.modeText}\n` +
+           `Check-in trước đó: ${res.summary.checkInCount} lần (${res.summary.checkInTimes.join(', ') || 'Chưa có'})\n` +
+           `Check-out trước đó: ${res.summary.checkOutCount} lần (${res.summary.checkOutTimes.join(', ') || 'Chưa có'})\n` +
+           `🎯 ${timePart ? `${actionText} thành công lúc ${timePart}` : res.message}`;
+  }
+}
+
 // Main trigger execution for all users
 export async function runAutoCheckInOutAndSendTelegram(isManual = false) {
   const users = (await db.getUsers()).filter(u => u.isActive);
@@ -431,64 +458,113 @@ export async function runAutoCheckInOutAndSendTelegram(isManual = false) {
   db.addLog('info', `🤖 Bắt đầu trigger chấm công tự động (${isManual ? 'Thủ công' : 'Theo lịch'}) lúc ${nowStr}`);
   
   let detailedResults = [];
-  
-  if (!isManual) {
-    // Schedule check-ins with random delays (0 - 15 minutes) in parallel
-    const promises = users.map(async (user) => {
-      const ruleCheck = await getTodayRuleForEmployee(user.empCode, timezone);
-      if (ruleCheck.allow) {
-        const delayMs = Math.random() * 15 * 60 * 1000;
-        console.log(`[Scheduler] Delaying check-in for ${user.empCode} (${user.fullName || ''}) by ${(delayMs / 60000).toFixed(1)} mins`);
-        await new Promise(resolve => setTimeout(resolve, delayMs));
-      }
-      return await runCheckForUser(user, timezone);
-    });
-    detailedResults = await Promise.all(promises);
-  } else {
-    // Run immediately for manual trigger
+
+  if (isManual) {
+    // Manual trigger: run all immediately and send a single report
     for (const user of users) {
       const res = await runCheckForUser(user, timezone);
       detailedResults.push(res);
     }
+    
+    let resultList = [];
+    for (const res of detailedResults) {
+      resultList.push(formatSingleUserReport(res));
+    }
+    const telegramReport = `📌 Kết quả chấm công thủ công lúc ${nowStr}\n\n${resultList.join('\n\n')}`;
+    await sendTelegramMessage(telegramReport);
+    db.addLog('info', `🤖 Kết thúc trigger chấm công thủ công. Đã gửi thông báo Telegram.`);
+    return detailedResults;
   }
+
+  // Automatic trigger: calculate separate random delay times and send live predictions
+  const bypassUsers = [];
+  const activeUsers = [];
   
-  let resultList = [];
-  for (const res of detailedResults) {
-    if (res.status === 'bypass') {
-      resultList.push(
-        `⏭️ Đăng nhập thành công\n` +
-        `Tên: ${res.fullName}\n` +
-        `Mã: ${res.empCode}\n` +
-        `Chế độ hôm nay: ${res.modeText}\n` +
-        `Kết quả: Bỏ qua chấm công\n` +
-        `Lý do: ${res.message}`
-      );
-    } else if (res.status === 'error') {
-      resultList.push(
-        `❌ Đăng nhập ${res.message.includes('Đăng nhập') ? 'thất bại' : 'thành công'}\n` +
-        `Tên: ${res.fullName}\n` +
-        `Mã: ${res.empCode}\n` +
-        `Chế độ hôm nay: ${res.modeText}\n` +
-        `Kết quả: Lỗi - ${res.message}`
-      );
+  for (const user of users) {
+    const ruleCheck = await getTodayRuleForEmployee(user.empCode, timezone);
+    if (ruleCheck.allow) {
+      activeUsers.push(user);
     } else {
-      const actionText = res.message.includes('CHECK IN') ? 'CHECK IN' : 'CHECK OUT';
-      resultList.push(
-        `✅ Đăng nhập thành công\n` +
-        `Tên: ${res.fullName}\n` +
-        `Mã: ${res.empCode}\n` +
-        `Chế độ hôm nay: ${res.modeText}\n` +
-        `Check-in trước đó: ${res.summary.checkInCount} lần (${res.summary.checkInTimes.join(', ') || 'Chưa có'})\n` +
-        `Check-out trước đó: ${res.summary.checkOutCount} lần (${res.summary.checkOutTimes.join(', ') || 'Chưa có'})\n` +
-        `🎯 ${res.message.split('thành công lúc ')[1] ? `${actionText} thành công lúc ${res.message.split('thành công lúc ')[1]}` : res.message}`
-      );
+      bypassUsers.push({ user, ruleCheck });
     }
   }
+
+  // 1. Process all bypassed users immediately
+  let bypassResults = [];
+  for (const { user, ruleCheck } of bypassUsers) {
+    const logMsg = `⏭️ [${user.empCode}] ${user.fullName || ''} - Chế độ: ${ruleCheck.modeText} - Kết quả: Bỏ qua chấm công - Lý do: ${ruleCheck.reason}`;
+    db.addLog('bypass', logMsg);
+    
+    const res = {
+      empCode: user.empCode,
+      fullName: user.fullName || user.empCode,
+      status: 'bypass',
+      modeText: ruleCheck.modeText,
+      message: ruleCheck.reason
+    };
+    bypassResults.push(res);
+    detailedResults.push(res);
+  }
+
+  // 2. If there are no active users (e.g., Sunday or everyone is off)
+  if (activeUsers.length === 0) {
+    let reportList = bypassResults.map(res => formatSingleUserReport(res));
+    const telegramReport = `📌 Kết quả chấm công tự động lúc ${nowStr}\n\n${reportList.join('\n\n')}`;
+    await sendTelegramMessage(telegramReport);
+    db.addLog('info', `🤖 Kết thúc trigger chấm công. Tất cả tài khoản đều bỏ qua.`);
+    return detailedResults;
+  }
+
+  // 3. Assign random target times for active users
+  const scheduledUsers = activeUsers.map(user => {
+    const delayMs = Math.random() * 15 * 60 * 1000; // 0 - 15 minutes
+    const targetTime = new Date(Date.now() + delayMs);
+    return { user, targetTime };
+  });
+
+  // Sort by targetTime ascending
+  scheduledUsers.sort((a, b) => a.targetTime - b.targetTime);
+
+  // Send initial message showing bypassed users (if any) and the first scheduled user
+  const firstScheduled = scheduledUsers[0];
+  const firstTimeStr = getFormattedDateInTimezone(firstScheduled.targetTime, 'HH:mm:ss', timezone);
   
-  const telegramReport = `📌 Kết quả chấm công tự động (${isManual ? 'Thủ công' : 'Tự động'})\n\n${resultList.join('\n\n')}`;
-  await sendTelegramMessage(telegramReport);
-  
-  db.addLog('info', `🤖 Kết thúc trigger chấm công. Đã gửi thông báo Telegram.`);
+  let initialMsg = `📌 Bắt đầu ca chấm công tự động lúc ${nowStr}\n\n`;
+  if (bypassResults.length > 0) {
+    const bypassReport = bypassResults.map(res => formatSingleUserReport(res)).join('\n\n');
+    initialMsg += `${bypassReport}\n\n`;
+  }
+  initialMsg += `⏭️ Dự kiến tài khoản tiếp theo: ${firstScheduled.user.fullName || firstScheduled.user.empCode} sẽ chấm lúc ${firstTimeStr}`;
+  await sendTelegramMessage(initialMsg);
+
+  // 4. Sequentially process active users at their target times
+  for (let i = 0; i < scheduledUsers.length; i++) {
+    const current = scheduledUsers[i];
+    const delayMs = current.targetTime.getTime() - Date.now();
+    
+    if (delayMs > 0) {
+      console.log(`[Scheduler] Waiting ${(delayMs / 1000).toFixed(0)} seconds for user ${current.user.empCode} (${current.user.fullName || ''})`);
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+
+    const res = await runCheckForUser(current.user, timezone);
+    detailedResults.push(res);
+
+    let reportMsg = `📌 Kết quả chấm công tự động lúc ${getFormattedDateInTimezone(new Date(), 'HH:mm:ss', timezone)}\n\n`;
+    reportMsg += formatSingleUserReport(res);
+
+    if (i < scheduledUsers.length - 1) {
+      const next = scheduledUsers[i + 1];
+      const nextTimeStr = getFormattedDateInTimezone(next.targetTime, 'HH:mm:ss', timezone);
+      reportMsg += `\n\n⏭️ Dự kiến tài khoản tiếp theo: ${next.user.fullName || next.user.empCode} sẽ chấm lúc ${nextTimeStr}`;
+    } else {
+      reportMsg += `\n\n🎯 Hoàn tất ca chấm công!`;
+    }
+
+    await sendTelegramMessage(reportMsg);
+  }
+
+  db.addLog('info', `🤖 Kết thúc ca chấm công tự động và hoàn tất gửi tất cả báo cáo.`);
   return detailedResults;
 }
 
