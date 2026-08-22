@@ -291,8 +291,8 @@ app.post('/api/trigger/:empCode', async (req, res) => {
 });
 
 // Start Express server and initial scheduler
-app.listen(PORT, async () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', async () => {
+  console.log(`Server is running at http://0.0.0.0:${PORT}`);
   try {
     await initDb();
   } catch (err) {
