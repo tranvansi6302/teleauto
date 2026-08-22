@@ -295,9 +295,9 @@ app.listen(PORT, '0.0.0.0', async () => {
   console.log(`Server is running at http://0.0.0.0:${PORT}`);
   try {
     await initDb();
+    db.addLog('info', `Hệ thống bot bắt đầu hoạt động trên cổng ${PORT}.`);
+    await startScheduler();
   } catch (err) {
-    console.error('Failed to initialize database on startup:', err);
+    console.error('Database connection error on startup (App will stay running):', err.message);
   }
-  db.addLog('info', `Hệ thống bot bắt đầu hoạt động trên cổng ${PORT}.`);
-  await startScheduler();
 });

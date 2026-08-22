@@ -574,7 +574,13 @@ export async function startScheduler() {
   cronTasks.forEach(task => task.stop());
   cronTasks = [];
   
-  const settings = await db.getSettings();
+  let settings;
+  try {
+    settings = await db.getSettings();
+  } catch (err) {
+    console.error('[Scheduler] Database connection error during startScheduler:', err.message);
+    return;
+  }
   const checkTimes = settings.checkTimes || [];
   const timezone = settings.timezone || 'Asia/Ho_Chi_Minh';
   
